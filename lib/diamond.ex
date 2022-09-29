@@ -5,7 +5,7 @@ defmodule Diamond do
          A
         #{middle_bit_for_B("B")}
        #{middle_bit_for_C("C")}
-      #{middle_bit_for_D()}
+      #{middle_bit_for_D("D")}
        #{middle_bit_for_C("C")}
         #{middle_bit_for_B("B")}
          A
@@ -41,8 +41,7 @@ defmodule Diamond do
     "#{char}#{spaces(3)}#{char}"
   end
 
-  defp middle_bit_for_D() do
-    char = "D"
+  defp middle_bit_for_D(char) do
     "#{char}#{spaces(5)}#{char}"
   end
 
