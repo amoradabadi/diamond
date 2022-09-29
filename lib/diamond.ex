@@ -1,6 +1,6 @@
 defmodule Diamond do
-  def printDiamond(char) do
-    if char == "D" do
+  def printDiamond(diamond_type) do
+    if diamond_type == "D" do
       """
       #{leading_spaces_D("A")}A
       #{leading_spaces_D("B")}#{middle_bit("B")}
@@ -11,7 +11,7 @@ defmodule Diamond do
       #{leading_spaces_D("A")}A
       """
     else
-      if char == "C" do
+      if diamond_type == "C" do
         """
         #{leading_spaces_C("A")}A
         #{leading_spaces_C("B")}#{middle_bit("B")}
@@ -20,7 +20,7 @@ defmodule Diamond do
         #{leading_spaces_C("A")}A
         """
       else
-        if char == "B" do
+        if diamond_type == "B" do
           """
           #{leading_spaces_B("A")}A
           #{leading_spaces_B("B")}#{middle_bit("B")}
