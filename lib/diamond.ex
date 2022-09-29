@@ -34,19 +34,24 @@ defmodule Diamond do
   end
 
   defp middle_bit_for_B(char) do
-    "#{char}#{spaces(1)}#{char}"
+    "#{char}#{spaces(char)}#{char}"
   end
 
   defp middle_bit_for_C(char) do
-    "#{char}#{spaces(3)}#{char}"
+    "#{char}#{spaces(char)}#{char}"
   end
 
   defp middle_bit_for_D(char) do
-    "#{char}#{spaces(5)}#{char}"
+    "#{char}#{spaces(char)}#{char}"
   end
 
-  defp spaces(n) do
-    String.duplicate(" ", n)
-  end
+  defp spaces(char) do
+    map = %{
+      "B" => 1,
+      "C" => 3,
+      "D" => 5
+    }
 
+    String.duplicate(" ", map[char])
+  end
 end
