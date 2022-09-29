@@ -22,9 +22,9 @@ defmodule Diamond do
       else
         if char == 'B' do
           """
-           A
-          #{middle_bit("B")}
-           A
+          #{leading_spaces_B("A")}A
+          #{leading_spaces_B("B")}#{middle_bit("B")}
+          #{leading_spaces_B("A")}A
           """
         else
           'A'
@@ -48,21 +48,33 @@ defmodule Diamond do
   end
 
   defp leading_spaces_D(char) do
+    char_index = 3
     map = %{
-      "A" => 3,
-      "B" => 2,
-      "C" => 1,
-      "D" => 0
+      "A" => char_index - 0,
+      "B" => char_index - 1,
+      "C" => char_index - 2,
+      "D" => char_index - 3
     }
 
     String.duplicate(" ", map[char])
   end
 
   defp leading_spaces_C(char) do
+    char_index = 2
     map = %{
-      "A" => 2,
-      "B" => 1,
-      "C" => 0
+      "A" => char_index - 0,
+      "B" => char_index - 1,
+      "C" => char_index - 2
+    }
+
+    String.duplicate(" ", map[char])
+  end
+
+  defp leading_spaces_B(char) do
+      char_index = 1
+      map = %{
+      "A" => char_index - 0,
+      "B" => char_index - 1
     }
 
     String.duplicate(" ", map[char])
