@@ -1,6 +1,6 @@
 defmodule Diamond do
   def printDiamond(char) do
-    if char == 'D' do
+    if char == "D" do
       """
       #{leading_spaces_D("A")}A
       #{leading_spaces_D("B")}#{middle_bit("B")}
@@ -11,7 +11,7 @@ defmodule Diamond do
       #{leading_spaces_D("A")}A
       """
     else
-      if char == 'C' do
+      if char == "C" do
         """
         #{leading_spaces_C("A")}A
         #{leading_spaces_C("B")}#{middle_bit("B")}
@@ -20,14 +20,14 @@ defmodule Diamond do
         #{leading_spaces_C("A")}A
         """
       else
-        if char == 'B' do
+        if char == "B" do
           """
           #{leading_spaces_B("A")}A
           #{leading_spaces_B("B")}#{middle_bit("B")}
           #{leading_spaces_B("A")}A
           """
         else
-          'A'
+          "A"
         end
       end
     end
@@ -49,6 +49,7 @@ defmodule Diamond do
 
   defp leading_spaces_D(char) do
     char_index = 3
+
     map = %{
       "A" => char_index - 0,
       "B" => char_index - 1,
@@ -61,6 +62,7 @@ defmodule Diamond do
 
   defp leading_spaces_C(char) do
     char_index = 2
+
     map = %{
       "A" => char_index - 0,
       "B" => char_index - 1,
@@ -71,12 +73,23 @@ defmodule Diamond do
   end
 
   defp leading_spaces_B(char) do
-      char_index = 1
-      map = %{
+    char_index = 1
+
+    map = %{
       "A" => char_index - 0,
       "B" => char_index - 1
     }
 
     String.duplicate(" ", map[char])
+  end
+
+  def get_char_index(char) do
+    map = %{
+      "A" => 0,
+      "B" => 1,
+      "C" => 2,
+      "D" => 3
+    }
+    map[char]
   end
 end

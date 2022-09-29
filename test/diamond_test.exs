@@ -3,11 +3,11 @@ defmodule DiamondTest do
   doctest Diamond
 
   test "print diamond A" do
-    assert Diamond.printDiamond('A') == 'A'
+    assert Diamond.printDiamond("A") == "A"
   end
 
   test "print diamond B" do
-    assert Diamond.printDiamond('B') == """
+    assert Diamond.printDiamond("B") == """
      A
     B B
      A
@@ -15,7 +15,7 @@ defmodule DiamondTest do
   end
 
   test "print diamond C" do
-    assert Diamond.printDiamond('C') == """
+    assert Diamond.printDiamond("C") == """
       A
      B B
     C   C
@@ -25,7 +25,7 @@ defmodule DiamondTest do
   end
 
   test "print diamond D" do
-    assert Diamond.printDiamond('D') == """
+    assert Diamond.printDiamond("D") == """
        A
       B B
      C   C
@@ -34,5 +34,9 @@ defmodule DiamondTest do
       B B
        A
     """
+  end
+
+  test "print diamond Dddddd" do
+    assert Diamond.get_char_index("D") == 3
   end
 end
