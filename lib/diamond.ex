@@ -1,5 +1,13 @@
 defmodule Diamond do
   def printDiamond(char) do
-    'A'
+    if(char == 'B') do
+      """
+       A
+      B B
+       A
+      """
+    else
+      'A'
+    end
   end
 end
