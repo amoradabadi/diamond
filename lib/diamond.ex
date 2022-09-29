@@ -34,15 +34,18 @@ defmodule Diamond do
   end
 
   defp middle_bit_for_B() do
-    "B#{spaces(1)}B"
+    char = "B"
+    "#{char}#{spaces(1)}#{char}"
   end
 
   defp middle_bit_for_C() do
-    "C#{spaces(3)}C"
+    char = "C"
+    "#{char}#{spaces(3)}#{char}"
   end
 
   defp middle_bit_for_D() do
-    "D#{spaces(5)}D"
+    char = "D"
+    "#{char}#{spaces(5)}#{char}"
   end
 
   defp spaces(n) do
