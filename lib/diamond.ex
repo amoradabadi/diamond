@@ -3,27 +3,27 @@ defmodule Diamond do
     if char == 'D' do
       """
          A
-        #{middle_bit_for_B()}
+        #{middle_bit_for_B("B")}
        #{middle_bit_for_C()}
       #{middle_bit_for_D()}
        #{middle_bit_for_C()}
-        #{middle_bit_for_B()}
+        #{middle_bit_for_B("B")}
          A
       """
     else
       if char == 'C' do
         """
           A
-         #{middle_bit_for_B()}
+         #{middle_bit_for_B("B")}
         #{middle_bit_for_C()}
-         #{middle_bit_for_B()}
+         #{middle_bit_for_B("B")}
           A
         """
       else
         if char == 'B' do
           """
            A
-          #{middle_bit_for_B()}
+          #{middle_bit_for_B("B")}
            A
           """
         else
@@ -33,8 +33,7 @@ defmodule Diamond do
     end
   end
 
-  defp middle_bit_for_B() do
-    char = "B"
+  defp middle_bit_for_B(char) do
     "#{char}#{spaces(1)}#{char}"
   end
 
