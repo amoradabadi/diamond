@@ -48,33 +48,15 @@ defmodule Diamond do
   end
 
   defp leading_spaces_D(char) do
-    map = %{
-      "A" => get_char_index("D") - get_char_index(char),
-      "B" => get_char_index("D") - get_char_index(char),
-      "C" => get_char_index("D") - get_char_index(char),
-      "D" => get_char_index("D") - get_char_index(char)
-    }
-
-    String.duplicate(" ", map[char])
+    String.duplicate(" ", get_char_index("D") - get_char_index(char))
   end
 
   defp leading_spaces_C(char) do
-    map = %{
-      "A" => get_char_index("C") - get_char_index(char),
-      "B" => get_char_index("C") - get_char_index(char),
-      "C" => get_char_index("C") - get_char_index(char)
-    }
-
-    String.duplicate(" ", map[char])
+    String.duplicate(" ", get_char_index("C") - get_char_index(char))
   end
 
   defp leading_spaces_B(char) do
-    map = %{
-      "A" => get_char_index("B") - get_char_index(char),
-      "B" => get_char_index("B") - get_char_index(char)
-    }
-
-    String.duplicate(" ", map[char])
+    String.duplicate(" ", get_char_index("B") - get_char_index(char))
   end
 
   def get_char_index(char) do
