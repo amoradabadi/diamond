@@ -13,4 +13,14 @@ defmodule DiamondTest do
      A
     """
   end
+
+  test "print diamond C" do
+    assert Diamond.printDiamond('C') == """
+      A
+     B B
+    C   C
+     B B
+      A
+    """
+  end
 end
