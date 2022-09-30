@@ -36,7 +36,12 @@ defmodule DiamondTest do
     """
   end
 
-  test "print diamond Dddddd" do
+  test "print diamond for get_char_index 3" do
+    assert Diamond.get_char_index("A") == 0
     assert Diamond.get_char_index("D") == 3
+    assert Diamond.get_char_index("E") == 4
+    assert Diamond.get_char_index("Z") == 25
   end
+
+
 end

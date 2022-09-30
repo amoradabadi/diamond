@@ -50,12 +50,8 @@ defmodule Diamond do
   end
 
   def get_char_index(char) do
-    %{
-      "A" => 0,
-      "B" => 1,
-      "C" => 2,
-      "D" => 3
-    }[char]
+    <<code::utf8>> = char
+    code - 65
   end
 
   def char_for_index(index) do
