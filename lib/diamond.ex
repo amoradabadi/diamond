@@ -3,28 +3,19 @@ defmodule Diamond do
     if diamond_type == "D" do
       """
       #{leading_spaces(diamond_type, "A")}A
-      #{line_for_char(diamond_type, 1)}
-      #{line_for_char(diamond_type, 2)}
-      #{line_for_char(diamond_type, 3)}
-      #{line_for_char(diamond_type, 2)}
-      #{line_for_char(diamond_type, 1)}
-      #{leading_spaces(diamond_type, "A")}A
+      #{loop(diamond_type)}#{leading_spaces(diamond_type, "A")}A
       """
     else
       if diamond_type == "C" do
         """
         #{leading_spaces(diamond_type, "A")}A
-        #{line_for_char(diamond_type, 1)}
-        #{line_for_char(diamond_type, 2)}
-        #{line_for_char(diamond_type, 1)}
-        #{leading_spaces(diamond_type, "A")}A
+        #{loop(diamond_type)}#{leading_spaces(diamond_type, "A")}A
         """
       else
         if diamond_type == "B" do
           """
           #{leading_spaces(diamond_type, "A")}A
-          #{line_for_char(diamond_type, 1)}
-          #{leading_spaces(diamond_type, "A")}A
+          #{loop(diamond_type)}#{leading_spaces(diamond_type, "A")}A
           """
         else
           "A"
@@ -39,6 +30,23 @@ defmodule Diamond do
 
   defp middle_bit(char) do
     "#{char}#{spaces(char)}#{char}"
+  end
+
+  defp loop(diamond_type) do
+    max = get_char_index(diamond_type)
+    list = get_list(max)
+
+    Enum.map(list, fn i ->
+      "#{line_for_char(diamond_type, i)}\n"
+    end)
+  end
+
+  defp get_list(max) do
+    if max == 1 do
+      [1]
+    else
+      Enum.to_list(1..max) ++ Enum.to_list((max - 1)..1)
+    end
   end
 
   defp spaces(char) do
