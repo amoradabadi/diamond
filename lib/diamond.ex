@@ -3,27 +3,27 @@ defmodule Diamond do
     if diamond_type == "D" do
       """
       #{leading_spaces(diamond_type, "A")}A
-      #{line_for_char(diamond_type, "B")}
-      #{line_for_char(diamond_type, "C")}
-      #{line_for_char(diamond_type, "D")}
-      #{line_for_char(diamond_type, "C")}
-      #{line_for_char(diamond_type, "B")}
+      #{line_for_char(diamond_type, 1)}
+      #{line_for_char(diamond_type, 2)}
+      #{line_for_char(diamond_type, 3)}
+      #{line_for_char(diamond_type, 2)}
+      #{line_for_char(diamond_type, 1)}
       #{leading_spaces(diamond_type, "A")}A
       """
     else
       if diamond_type == "C" do
         """
         #{leading_spaces(diamond_type, "A")}A
-        #{line_for_char(diamond_type, "B")}
-        #{line_for_char(diamond_type, "C")}
-        #{line_for_char(diamond_type, "B")}
+        #{line_for_char(diamond_type, 1)}
+        #{line_for_char(diamond_type, 2)}
+        #{line_for_char(diamond_type, 1)}
         #{leading_spaces(diamond_type, "A")}A
         """
       else
         if diamond_type == "B" do
           """
           #{leading_spaces(diamond_type, "A")}A
-          #{line_for_char(diamond_type, "B")}
+          #{line_for_char(diamond_type, 1)}
           #{leading_spaces(diamond_type, "A")}A
           """
         else
@@ -33,8 +33,8 @@ defmodule Diamond do
     end
   end
 
-  defp line_for_char(diamond_type, char) do
-    "#{leading_spaces(diamond_type, char)}#{middle_bit(char)}"
+  defp line_for_char(diamond_type, index) do
+    "#{leading_spaces(diamond_type, char_for_index(index))}#{middle_bit(char_for_index(index))}"
   end
 
   defp middle_bit(char) do
@@ -62,5 +62,14 @@ defmodule Diamond do
       "C" => 2,
       "D" => 3
     }[char]
+  end
+
+  def char_for_index(index) do
+    %{
+      0 => "A",
+      1 => "B",
+      2 => "C",
+      3 => "D"
+    }[index]
   end
 end
