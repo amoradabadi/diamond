@@ -2,29 +2,29 @@ defmodule Diamond do
   def printDiamond(diamond_type) do
     if diamond_type == "D" do
       """
-      #{leading_spaces_D("A")}A
-      #{leading_spaces_D("B")}#{middle_bit("B")}
-      #{leading_spaces_D("C")}#{middle_bit("C")}
-      #{leading_spaces_D("D")}#{middle_bit("D")}
-      #{leading_spaces_D("C")}#{middle_bit("C")}
-      #{leading_spaces_D("B")}#{middle_bit("B")}
-      #{leading_spaces_D("A")}A
+      #{leading_spaces(diamond_type, "A")}A
+      #{leading_spaces(diamond_type, "B")}#{middle_bit("B")}
+      #{leading_spaces(diamond_type, "C")}#{middle_bit("C")}
+      #{leading_spaces(diamond_type, "D")}#{middle_bit("D")}
+      #{leading_spaces(diamond_type, "C")}#{middle_bit("C")}
+      #{leading_spaces(diamond_type, "B")}#{middle_bit("B")}
+      #{leading_spaces(diamond_type, "A")}A
       """
     else
       if diamond_type == "C" do
         """
-        #{leading_spaces_C("A")}A
-        #{leading_spaces_C("B")}#{middle_bit("B")}
-        #{leading_spaces_C("C")}#{middle_bit("C")}
-        #{leading_spaces_C("B")}#{middle_bit("B")}
-        #{leading_spaces_C("A")}A
+        #{leading_spaces(diamond_type, "A")}A
+        #{leading_spaces(diamond_type, "B")}#{middle_bit("B")}
+        #{leading_spaces(diamond_type, "C")}#{middle_bit("C")}
+        #{leading_spaces(diamond_type, "B")}#{middle_bit("B")}
+        #{leading_spaces(diamond_type, "A")}A
         """
       else
         if diamond_type == "B" do
           """
-          #{leading_spaces_B("A")}A
-          #{leading_spaces_B("B")}#{middle_bit("B")}
-          #{leading_spaces_B("A")}A
+          #{leading_spaces(diamond_type, "A")}A
+          #{leading_spaces(diamond_type, "B")}#{middle_bit("B")}
+          #{leading_spaces(diamond_type, "A")}A
           """
         else
           "A"
@@ -47,16 +47,8 @@ defmodule Diamond do
     String.duplicate(" ", map[char])
   end
 
-  defp leading_spaces_D(char) do
-    String.duplicate(" ", get_char_index("D") - get_char_index(char))
-  end
-
-  defp leading_spaces_C(char) do
-    String.duplicate(" ", get_char_index("C") - get_char_index(char))
-  end
-
-  defp leading_spaces_B(char) do
-    String.duplicate(" ", get_char_index("B") - get_char_index(char))
+  defp leading_spaces(diamond_type, char) do
+    String.duplicate(" ", get_char_index(diamond_type) - get_char_index(char))
   end
 
   def get_char_index(char) do
