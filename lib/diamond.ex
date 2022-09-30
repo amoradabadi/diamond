@@ -35,14 +35,12 @@ defmodule Diamond do
     end
   end
 
-  defp spaces(char) do
-    map = %{
-      "B" => 1,
-      "C" => 3,
-      "D" => 5
-    }
+  def spaces(char) do
+    String.duplicate(" ", spaces_count(char))
+  end
 
-    String.duplicate(" ", map[char])
+  def spaces_count(char) do
+    get_char_index(char) * 2 - 1
   end
 
   defp leading_spaces(diamond_type, char) do
@@ -55,11 +53,6 @@ defmodule Diamond do
   end
 
   def char_for_index(index) do
-    %{
-      0 => "A",
-      1 => "B",
-      2 => "C",
-      3 => "D"
-    }[index]
+    String.at("ABCDEFGHIJKLMNOPQRSTUVWXYZ", index)
   end
 end

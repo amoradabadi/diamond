@@ -43,5 +43,11 @@ defmodule DiamondTest do
     assert Diamond.get_char_index("Z") == 25
   end
 
-
+  test "print diamond spaces" do
+    assert Diamond.spaces_count("B") == 1
+    assert Diamond.spaces_count("C") == 3
+    assert Diamond.spaces_count("D") == 5
+    assert Diamond.spaces_count("E") == 7
+    assert Diamond.spaces_count("Z") == 49
+  end
 end
