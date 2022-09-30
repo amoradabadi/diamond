@@ -1,26 +1,12 @@
 defmodule Diamond do
   def printDiamond(diamond_type) do
-    if diamond_type == "D" do
+    if diamond_type == "A" do
+      "A"
+    else
       """
       #{leading_spaces(diamond_type, "A")}A
       #{loop(diamond_type)}#{leading_spaces(diamond_type, "A")}A
       """
-    else
-      if diamond_type == "C" do
-        """
-        #{leading_spaces(diamond_type, "A")}A
-        #{loop(diamond_type)}#{leading_spaces(diamond_type, "A")}A
-        """
-      else
-        if diamond_type == "B" do
-          """
-          #{leading_spaces(diamond_type, "A")}A
-          #{loop(diamond_type)}#{leading_spaces(diamond_type, "A")}A
-          """
-        else
-          "A"
-        end
-      end
     end
   end
 
