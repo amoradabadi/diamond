@@ -1,6 +1,4 @@
-# Diamond
-
-**TODO: Add description**
+# Diamond kata (https://codingdojo.org/kata/Diamond/)
 
 ## Installation
 
@@ -13,6 +11,11 @@ def deps do
     {:diamond, "~> 0.1.0"}
   ]
 end
+```
+
+## Test
+```elixir
+mix test
 ```
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
